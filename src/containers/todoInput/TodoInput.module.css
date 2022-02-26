@@ -1,0 +1,27 @@
+.todoInput {
+    display: grid;
+}
+
+.todoInput__h1 {}
+
+.todoInput__textAndButton {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 15px;
+    height: 100px;
+    border: 2px solid lavender;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.todoInput__textAndButton input {
+    border: 2px solid lavender;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+
+.todoInput__textAndButton button {
+    background-color: gainsboro;
+    border: none;
+    border-radius: 4px;
+}

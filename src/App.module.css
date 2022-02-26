@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+
+.App {
+  width: 100%;
+}
+
+.mainSection {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
