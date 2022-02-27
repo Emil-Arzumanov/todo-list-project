@@ -31,18 +31,23 @@ const initialState = {
     currentTodoText:"",
 };
 
-const counterSlice = createSlice({
-    name: 'counter',
+const todosInputSlice = createSlice({
+    name: 'todosInputSlice',
     initialState,
     reducers: {
-        addActivity(state, action) {
-            state.todoList.push(action)
+        addActivity(state,action) {
+            state.todoList.push({
+                activity: state.currentTodoText,
+                condition: action.payload,
+                id: state.todoList.length+1
+            });
+            state.currentTodoText = "";
         },
-        updateTextInput(state, text) {
-            state.currentTodoText = text;
+        updateTextInput(state, action) {
+            state.currentTodoText = action.payload;
         },
     },
 })
 
-export const { addActivity, updateTextInput } = counterSlice.actions
-export default counterSlice.reducer
+export const { addActivity, updateTextInput } = todosInputSlice.actions
+export default todosInputSlice.reducer
