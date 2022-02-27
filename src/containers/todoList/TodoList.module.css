@@ -16,3 +16,31 @@
     border: none;
     background-color: gainsboro;
 }
+
+.todoList__list {
+    padding: 50px 0;
+    display: grid;
+    grid-template-rows: auto;
+    grid-row-gap: 20px;
+}
+
+.todoList__list div {
+    text-align: left;
+    border: 2px solid lavender;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.todoList__deleteButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+    padding-bottom: 60px;
+}
+
+.todoList__deleteButtons button {
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    background-color: gainsboro;
+}

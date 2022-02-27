@@ -13,7 +13,19 @@ const TodoList = function () {
                 <button>Done</button>
                 <button>Todo</button>
             </div>
-
+            <div className={todoListStyle.todoList__list}>
+                {
+                    todos.todoList.map(elem => {
+                        return (
+                            <div>{elem.activity}</div>
+                        );
+                    })
+                }
+            </div>
+            <div className={todoListStyle.todoList__deleteButtons}>
+                <button>Delete done tasks</button>
+                <button>Delete all tasks</button>
+            </div>
         </div>
     );
 };
