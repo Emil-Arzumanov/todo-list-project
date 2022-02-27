@@ -5,11 +5,9 @@ import {addActivity, updateTextInput} from "../../redux/reducers/todoReducer";
 const TodoInput = function () {
     const todos = useSelector(state => state.todoInput)
     const dispatch = useDispatch();
-    console.log(todos.todoList);
 
     return (
         <div className={todoInputStyle.todoInput}>
-            <h1 className={todoInputStyle.todoInput__h1}>TodoInput</h1>
             <div className={todoInputStyle.todoInput__textAndButton}>
                 <input type="text"
                        placeholder="New Todo"

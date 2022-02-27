@@ -1,0 +1,7 @@
+.todoList__list__pagination button {
+    border-radius: 4px;
+    padding: 6px;
+    border: none;
+    background-color: gainsboro;
+    margin-right: 10px;
+}

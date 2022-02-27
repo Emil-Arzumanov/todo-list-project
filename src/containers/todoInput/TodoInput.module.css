@@ -1,8 +1,7 @@
 .todoInput {
     display: grid;
+    padding: 20px 0 40px 0;
 }
-
-.todoInput__h1 {}
 
 .todoInput__textAndButton {
     display: grid;

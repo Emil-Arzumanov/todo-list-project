@@ -1,0 +1,12 @@
+.todoList__filterButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 100px;
+}
+
+.todoList__filterButtons button {
+    height: 37px;
+    border-radius: 4px;
+    border: none;
+    background-color: gainsboro;
+}
