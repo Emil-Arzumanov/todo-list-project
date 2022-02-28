@@ -1,9 +1,9 @@
 import {useDispatch, useSelector} from "react-redux";
 import listOfTodosStyle from "./ListOfTodos.module.css";
 import ListPagination from "./listPagination/ListPagination";
+import TodoElement from "./todoElement/TodoElement";
 
 const ListOfTodos = function () {
-    const dispatch = useDispatch();
     const todos = useSelector(state => state.todoInput);
     const startElement = todos.pageSize*(todos.currentPage-1);
 
@@ -14,7 +14,7 @@ const ListOfTodos = function () {
                 todos.todoList.map((elem,ind) => {
                     if(ind >= startElement && ind < startElement+todos.pageSize) {
                         return (
-                            <div key={elem.id} className={listOfTodosStyle.todoList__list__todo}>{elem.activity}</div>
+                            <TodoElement key={elem.id} id={elem.id} activity={elem.activity}/>
                         );
                     }
                 })

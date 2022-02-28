@@ -24,8 +24,28 @@ const todosInputSlice = createSlice({
             if (state.currentPage > 1)
                 state.currentPage -= 1;
         },
+        deleteAllTodos(state) {
+            state.todoList = [];
+        },
+        deleteDoneTodos(state) {
+
+        },
+        deleteCurrentTodo(state, action) {
+            state.todoList.forEach((elem,ind) => {
+                if (elem.id === action.payload+1) {
+                    state.todoList.splice(ind, 1);
+                }
+            })
+        },
     },
 })
 
-export const {addActivity, updateTextInput, nextPage, previousPage} = todosInputSlice.actions
+export const {
+    addActivity,
+    updateTextInput,
+    nextPage,
+    previousPage,
+    deleteAllTodos,
+    deleteCurrentTodo
+} = todosInputSlice.actions
 export default todosInputSlice.reducer
