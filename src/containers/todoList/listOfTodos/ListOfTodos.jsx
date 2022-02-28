@@ -14,7 +14,7 @@ const ListOfTodos = function () {
                 todos.todoList.map((elem,ind) => {
                     if(ind >= startElement && ind < startElement+todos.pageSize) {
                         return (
-                            <TodoElement key={elem.id} id={elem.id} activity={elem.activity}/>
+                            <TodoElement key={elem.id} id={elem.id} activity={elem.activity} condition={elem.condition}/>
                         );
                     }
                 })
