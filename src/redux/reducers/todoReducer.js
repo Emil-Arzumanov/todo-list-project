@@ -28,7 +28,14 @@ const todosInputSlice = createSlice({
             state.todoList = [];
         },
         deleteDoneTodos(state) {
-
+            let indToDelete = [];
+            state.todoList.forEach((elem,ind) => {
+                if (elem.condition === true) {
+                    indToDelete.push(ind);
+                }
+            })
+            for (let i = indToDelete.length -1; i >= 0; i--)
+                state.todoList.splice(indToDelete[i],1);
         },
         deleteCurrentTodo(state, action) {
             state.todoList.forEach((elem, ind) => {
@@ -60,6 +67,7 @@ export const {
     nextPage,
     previousPage,
     deleteAllTodos,
+    deleteDoneTodos,
     deleteCurrentTodo,
     undoTodo,
     doTodo,
