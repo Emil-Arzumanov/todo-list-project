@@ -10,3 +10,9 @@
     border: none;
     background-color: gainsboro;
 }
+
+.todoList__filterButtons .all,
+.todoList__filterButtons .done,
+.todoList__filterButtons .todo {
+    background-color: greenyellow;
+}

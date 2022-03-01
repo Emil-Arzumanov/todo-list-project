@@ -17,7 +17,7 @@ const initialState = {
         },
         {
             activity: "Feed the dog",
-            condition: false,
+            condition: true,
             id: 4
         },
         {
@@ -27,7 +27,7 @@ const initialState = {
         },
         {
             activity: "Feed the dog",
-            condition: false,
+            condition: true,
             id: 6
         },
         {
@@ -42,13 +42,14 @@ const initialState = {
         },
         {
             activity: "Go to sleep",
-            condition: false,
+            condition: true,
             id: 9
         },
     ],
     currentTodoText: "",
     currentPage: 1,
     pageSize: 5,
+    todoFilter: "all",
 };
 
 export default initialState;

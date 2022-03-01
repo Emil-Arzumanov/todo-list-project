@@ -58,6 +58,10 @@ const todosInputSlice = createSlice({
                 }
             })
         },
+        changeTodoFilter(state, action) {
+            state.todoFilter = action.payload;
+            console.log(state.todoFilter);
+        },
     },
 })
 
@@ -71,5 +75,6 @@ export const {
     deleteCurrentTodo,
     undoTodo,
     doTodo,
+    changeTodoFilter,
 } = todosInputSlice.actions
 export default todosInputSlice.reducer
