@@ -19,23 +19,25 @@ const todosInputSlice = createSlice({
         nextPage(state) {
             if (state.currentPage < Math.ceil(state.todoList.length / state.pageSize))
                 state.currentPage += 1;
+            state.currentIndex += state.pageSize;
         },
         previousPage(state) {
             if (state.currentPage > 1)
                 state.currentPage -= 1;
+            state.currentIndex -= state.pageSize;
         },
         deleteAllTodos(state) {
             state.todoList = [];
         },
         deleteDoneTodos(state) {
             let indToDelete = [];
-            state.todoList.forEach((elem,ind) => {
+            state.todoList.forEach((elem, ind) => {
                 if (elem.condition === true) {
                     indToDelete.push(ind);
                 }
             })
-            for (let i = indToDelete.length -1; i >= 0; i--)
-                state.todoList.splice(indToDelete[i],1);
+            for (let i = indToDelete.length - 1; i >= 0; i--)
+                state.todoList.splice(indToDelete[i], 1);
         },
         deleteCurrentTodo(state, action) {
             state.todoList.forEach((elem, ind) => {
@@ -60,7 +62,6 @@ const todosInputSlice = createSlice({
         },
         changeTodoFilter(state, action) {
             state.todoFilter = action.payload;
-            console.log(state.todoFilter);
         },
     },
 })

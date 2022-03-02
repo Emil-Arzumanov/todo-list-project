@@ -5,16 +5,24 @@ import TodoElement from "./todoElement/TodoElement";
 
 const ListOfTodos = function () {
     const todos = useSelector(state => state.todoInput);
-    const startElement = todos.pageSize*(todos.currentPage-1);
+    let startElement = todos.pageSize * (todos.currentPage - 1);
+    let index = todos.pageSize * (todos.currentPage - 1);
 
     return (
         <div className={listOfTodosStyle.todoList__list}>
             <ListPagination/>
             {
-                todos.todoList.map((elem,ind) => {
-                    if(ind >= startElement && ind < startElement+todos.pageSize) {
+                todos.todoList.map((elem, ind) => {
+                    let indCondition = ind >= startElement && index < startElement + todos.pageSize;
+                    let elemCondition = elem.condition === todos.todoFilter || todos.todoFilter === "all";
+                    if (indCondition && elemCondition) {
+                        index++;
                         return (
-                            <TodoElement key={elem.id} id={elem.id} activity={elem.activity} condition={elem.condition}/>
+                            <TodoElement key={elem.id}
+                                         id={elem.id}
+                                         activity={elem.activity}
+                                         condition={elem.condition}
+                            />
                         );
                     }
                 })
