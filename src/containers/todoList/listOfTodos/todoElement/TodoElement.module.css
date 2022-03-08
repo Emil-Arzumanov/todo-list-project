@@ -4,7 +4,7 @@
     border-radius: 4px;
     padding: 15px;
     display: grid;
-    grid-template-columns: 20fr 1fr 1fr;
+    grid-template-columns: 20fr 1fr 1fr 1fr;
     grid-column-gap: 5px;
 }
 
@@ -25,6 +25,10 @@
     color: red;
 }
 
+.todoList__list__todo .button__edit {
+    color: yellow;
+}
+
 .todoList__list__todo .button__do {
     color: greenyellow;
 }
@@ -34,5 +38,27 @@
 }
 
 .todoList__list__todo button:hover {
+    font-weight: bold;
+}
+
+.todoEditor {
+    text-align: left;
+    border: 2px solid lavender;
+    border-radius: 4px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 20fr 1fr;
+    grid-column-gap: 5px;
+}
+
+.todoEditor button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    color: greenyellow;
+}
+
+.todoEditor button:hover {
     font-weight: bold;
 }

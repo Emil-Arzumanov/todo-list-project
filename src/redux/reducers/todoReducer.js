@@ -9,6 +9,7 @@ const todosInputSlice = createSlice({
             state.todoList.push({
                 activity: state.currentTodoText,
                 condition: action.payload,
+                edit: false,
                 id: state.todoList.length + 1
             });
             state.currentTodoText = "";
@@ -64,9 +65,19 @@ const todosInputSlice = createSlice({
         changeTodoFilter(state, action) {
             state.todoFilter = action.payload;
         },
-        changeCurrentLisLength(state,action) {
+        changeCurrentLisLength(state, action) {
             state.currentListLength = action.payload;
         },
+        enableEditMod(state, action) {
+            state.todoList.forEach((elem) => {
+                if (elem.id === action.payload) {
+                    elem.edit = true;
+                }
+            })
+        },
+        disableEditModAndChangeTodo(state, action) {
+
+        }
     },
 })
 
@@ -81,6 +92,8 @@ export const {
     undoTodo,
     doTodo,
     changeTodoFilter,
-    changeCurrentLisLength
+    changeCurrentLisLength,
+    enableEditMod,
+    disableEditModAndChangeTodo
 } = todosInputSlice.actions
 export default todosInputSlice.reducer

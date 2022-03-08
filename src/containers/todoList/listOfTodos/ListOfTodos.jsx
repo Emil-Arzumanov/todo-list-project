@@ -30,6 +30,7 @@ const ListOfTodos = function () {
                                          id={elem.id}
                                          activity={elem.activity}
                                          condition={elem.condition}
+                                         edit={elem.edit}
                             />
                         );
                     }
