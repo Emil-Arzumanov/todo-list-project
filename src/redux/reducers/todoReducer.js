@@ -64,6 +64,7 @@ const todosInputSlice = createSlice({
         },
         changeTodoFilter(state, action) {
             state.todoFilter = action.payload;
+            state.currentPage = 1;
         },
         changeCurrentLisLength(state, action) {
             state.currentListLength = action.payload;
