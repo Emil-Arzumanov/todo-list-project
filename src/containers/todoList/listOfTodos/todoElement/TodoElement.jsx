@@ -1,17 +1,29 @@
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import todoElementStyle from "./TodoElement.module.css";
-import {deleteCurrentTodo, doTodo, enableEditMod, undoTodo} from "../../../../redux/reducers/todoReducer";
+import {
+    deleteCurrentTodo,
+    disableEditModAndChangeTodo,
+    doTodo,
+    enableEditMod,
+    undoTodo,
+    updateEditTextInput
+} from "../../../../redux/reducers/todoReducer";
 
 const TodoElement = function (props) {
     const dispatch = useDispatch();
+    const todos = useSelector(state => state.todoInput)
 
     return (
         <div key={props.id}>
             {
                 props.edit ?
                     <div className={todoElementStyle.todoEditor}>
-                        <input type="text"/>
-                        <button>Ок</button>
+                        <input
+                            type="text"
+                            onChange={(e) => dispatch(updateEditTextInput(e.target.value))}
+                            value={todos.currentEditText}
+                        />
+                        <button onClick={() => dispatch(disableEditModAndChangeTodo(props.id))}>Ок</button>
                     </div> :
                     <div className={props.condition
                         ? todoElementStyle.todoList__list__todoDone + " " + todoElementStyle.todoList__list__todo

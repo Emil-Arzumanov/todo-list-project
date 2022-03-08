@@ -76,8 +76,17 @@ const todosInputSlice = createSlice({
             })
         },
         disableEditModAndChangeTodo(state, action) {
-
-        }
+            state.todoList.forEach((elem) => {
+                if (elem.id === action.payload) {
+                    elem.activity = state.currentEditText;
+                    elem.edit = false;
+                    state.currentEditText = "";
+                }
+            })
+        },
+        updateEditTextInput(state, action) {
+            state.currentEditText = action.payload;
+        },
     },
 })
 
@@ -94,6 +103,7 @@ export const {
     changeTodoFilter,
     changeCurrentLisLength,
     enableEditMod,
-    disableEditModAndChangeTodo
+    disableEditModAndChangeTodo,
+    updateEditTextInput
 } = todosInputSlice.actions
 export default todosInputSlice.reducer

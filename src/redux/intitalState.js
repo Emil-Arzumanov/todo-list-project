@@ -56,6 +56,7 @@ const initialState = {
         },
     ],
     currentTodoText: "",
+    currentEditText: "",
     currentPage: 1,
     pageSize: 5,
     todoFilter: "all",
