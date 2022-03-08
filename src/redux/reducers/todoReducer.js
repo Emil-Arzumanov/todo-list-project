@@ -17,7 +17,7 @@ const todosInputSlice = createSlice({
             state.currentTodoText = action.payload;
         },
         nextPage(state) {
-            if (state.currentPage < Math.ceil(state.todoList.length / state.pageSize))
+            if (state.currentPage < Math.ceil(state.currentListLength / state.pageSize))
                 state.currentPage += 1;
             state.currentIndex += state.pageSize;
         },
@@ -64,6 +64,9 @@ const todosInputSlice = createSlice({
         changeTodoFilter(state, action) {
             state.todoFilter = action.payload;
         },
+        changeCurrentLisLength(state,action) {
+            state.currentListLength = action.payload;
+        },
     },
 })
 
@@ -78,5 +81,6 @@ export const {
     undoTodo,
     doTodo,
     changeTodoFilter,
+    changeCurrentLisLength
 } = todosInputSlice.actions
 export default todosInputSlice.reducer

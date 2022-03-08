@@ -5,7 +5,7 @@ import {nextPage, previousPage} from "../../../../redux/reducers/todoReducer";
 const ListOfTodos = function () {
     const dispatch = useDispatch();
     const todos = useSelector(state => state.todoInput)
-    let pageLimit = Math.ceil(todos.todoList.length / todos.pageSize)
+    let pageLimit = Math.ceil(todos.currentListLength / todos.pageSize)
     if (pageLimit < 1) {
         return (
             <div className={listPaginationStyle.todoList__list__pagination}>

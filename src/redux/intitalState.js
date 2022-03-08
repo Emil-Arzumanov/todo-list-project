@@ -50,6 +50,7 @@ const initialState = {
     currentPage: 1,
     pageSize: 5,
     todoFilter: "all",
+    currentListLength: 9,
 };
 
 export default initialState;
